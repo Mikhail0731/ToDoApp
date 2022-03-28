@@ -26,7 +26,7 @@ newTaskBtn.classList.add('btn', 'btn-danger')
 
 
 newTaskBtn.textContent ='x'
-//newTaskSpan.textContent = 'Dummy'
+//newTaskSpan.textContent = 'Dummy Task'
 
 
 
