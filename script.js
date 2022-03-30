@@ -17,7 +17,7 @@ const newTaskBtn =document.createElement('button')
 
 taskList.appendChild(newTaskLi)
 newTaskLi.appendChild(newTaskSpan)
-newTaskSpan.appendChild(newTaskBtn)
+newTaskLi.appendChild(newTaskBtn)
 
 newTaskLi.classList.add('task-container', 'list-group-item')
 newTaskBtn.classList.add('btn', 'btn-danger')
@@ -26,7 +26,7 @@ newTaskBtn.classList.add('btn', 'btn-danger')
 
 
 newTaskBtn.textContent ='x'
-//newTaskSpan.textContent = 'Dummy Task'
+newTaskSpan.textContent = 'Dummy Task'
 
 
 
