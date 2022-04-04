@@ -1,34 +1,39 @@
 
-const newTask = document.querySelector
-('#new-task')
-const addTaskBtn = document.querySelector
-('#add-btn')
-const taskList = document.querySelector
-('#task-list')
-console.log(taskList)
-const handleAddTask =() => {
-  console.log(newTask.value)  
-}
+//select new element
+const newTask = document.querySelector('#new-task')
+const addTaskBtn = document.querySelector('#add-btn')
+const taskList = document.querySelector('#task-list')
 
+ const handleDeleteTask = (element) => {
+    element.remove()
+  }
 
+const handleAddTask = () => {
+//create new element
 const newTaskLi =document.createElement('li')
 const newTaskSpan =document.createElement('span')
-const newTaskBtn =document.createElement('button')
+const newTaskDeleteBtn =document.createElement('button')
 
+//use append child to build the hierarchy
 taskList.appendChild(newTaskLi)
 newTaskLi.appendChild(newTaskSpan)
-newTaskLi.appendChild(newTaskBtn)
+newTaskLi.appendChild(newTaskDeleteBtn)
 
+//add classes to a new elements
 newTaskLi.classList.add('task-container', 'list-group-item')
-newTaskBtn.classList.add('btn', 'btn-danger')
+newTaskDeleteBtn.classList.add('btn', 'btn-danger')
 
+//add content to a new elements
+newTaskDeleteBtn.textContent ='x'
+newTaskSpan.textContent = newTask.value
 
+newTaskDeleteBtn.addEventListener('click', ()=>{
+  handleDeleteTask(newTaskLi)
+} )
+}
 
-
-newTaskBtn.textContent ='x'
-newTaskSpan.textContent = 'Dummy Task'
-
-
+// add event to the add button
+addTaskBtn.addEventListener('click', handleAddTask)
 
 
 
